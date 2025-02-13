@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body setup */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ff5c8d;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            background-image: url('https://www.transparenttextures.com/patterns/heart-large.png');
+            background-size: cover;
+            background-position: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Keyframes for smooth fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Header text with animation */
+        h1 {
+            font-size: 4rem;
+            font-family: 'Lucida Handwriting', cursive;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+            animation: bounceText 2s ease-out infinite;
+        }   
+        h2 {
+            font-size: 3rem;
+            font-family: 'Dancing Script', cursive;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+            animation: bounceText 2s ease-out infinite;
+        }
+        h5 {
+            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+            animation: bounceText 2s ease-out infinite;
+        }
+
+        /* Bounce text effect */
+        @keyframes bounceText {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Stylish container for buttons and images */
+        .container {
+            text-align: center;
+            animation: fadeInContainer 2s ease-out forwards;
+        }
+
+        /* Fade-in animation for container */
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Buttons with glowing effects */
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .yes-button, .no-button {
+            font-size: 1.5em;
+            padding: 20px 40px;
+            margin: 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            position: relative;
+        }
+
+        /* Glowing effect for buttons */
+        .yes-button {
+            background: linear-gradient(45deg, #4caf50, #66bb6a);
+            color: white;
+        }
+
+        .no-button {
+            background: linear-gradient(45deg, #f44336, #e57373);
+            color: white;
+        }
+
+        /* On hover, glow and scale up */
+        .yes-button:hover, .no-button:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* On focus (active) effect */
+        .yes-button:active, .no-button:active {
+            transform: scale(0.95);
+        }
+
+        /* Text animation when switching between Yes/No */
+        .animated-text {
+            font-size: 1.5em;
+            color: #ffddc1;
+            font-weight: bold;
+            animation: fadeInText 1s ease-out;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* GIF Container */
+        .gif_container img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        /* Parallax effect for images */
+        .gif_container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* "Yes" page styling */
+        .yes-page-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .yes-page-container h1 {
+            font-size: 3.5em;
+            font-family: 'Dancing Script', cursive;
+            color: #ffffff;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .yes-page-container img {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Will you be my</h2>
+        <h1>Valentine?</h1>
+        <h5>(Im sorry for calling you Buang☹️)</h5>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnJncm9maXczYWV3cTM5MWN4NHFzNXljbGpmMTNhMmRpbmJ5ZjdkOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1hoKkBNSBxVyHIsPer/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "Im sorry",
+             "Im sorry^2",
+            "Paumanhin.🥺",
+             "Pretty please",
+            "think about it muna",
+            "If you say no, I will be really sad🥺",
+            "I will be very sad😢",
+            "iiyak talaga ako 😢",
+            "please po 🥺",
+            "say yes please! ❤️"
+        ];
+
+        let messageIndex = 0;
+
+        function handleNoClick() {
+            const noButton = document.querySelector('.no-button');
+            const yesButton = document.querySelector('.yes-button');
+            noButton.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+            const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize * 1.5}px`;
+
+            // Add an animated response when clicking 'No'
+            const animatedText = document.createElement('div');
+            animatedText.classList.add('animated-text');
+            animatedText.textContent = messages[messageIndex];
+            noButton.appendChild(animatedText);
+
+            setTimeout(() => {
+                animatedText.remove();
+            }, 1000);
+        }
+
+        function handleYesClick() {
+            const yesPageHTML = `
+                <div class="yes-page-container">
+                    <h1>Knew you would say yes!</h1>
+                    <div class="gif_container">
+                        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTl0cnNpeXpvYWxmNm92OGt4eTc1NmpvMTd3dDduMnIydTEyZ2NncCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/wNk71OcVtOPncxNHVT/giphy.gif">
+                    </div>
+                </div>
+            `;
+            document.body.innerHTML = yesPageHTML;
+        }
+    </script>
+</body>
+</html>
